@@ -1,111 +1,374 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap');
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ========================================
+   RESET
+======================================== */
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
 }
+
 
 body {
-  margin: 0;
+    font-family: "Sora", sans-serif;
+    background: #f7f7ff;
+    color: #18203b;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+
+/* ========================================
+   LINKS
+======================================== */
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+
+/* ========================================
+   HOMEPAGE
+======================================== */
+
+.home-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+
+/* ========================================
+   CARD PRINCIPAL
+======================================== */
+
+.home-card {
+    width: 100%;
+    max-width: 1330px;
+    height: 760px;
+
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        radial-gradient(
+            circle at 15% 90%,
+            rgba(132, 104, 255, 0.78),
+            transparent 36%
+        ),
+        radial-gradient(
+            circle at 95% 10%,
+            rgba(153, 176, 255, 0.78),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 48% 55%,
+            rgba(255, 255, 255, 0.96),
+            transparent 55%
+        ),
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f5f7ff 45%,
+            #e9edff 100%
+        );
+
+    box-shadow:
+        0 20px 55px rgba(80, 73, 180, 0.13),
+        0 0 40px rgba(110, 101, 255, 0.08);
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+
+/* ========================================
+   HEADER
+======================================== */
+
+.home-header {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 36px 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 5;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+
+/* ========================================
+   LOGO PEQUENO
+======================================== */
+
+.home-logo {
+    font-size: 19px;
+    font-weight: 600;
+
+    letter-spacing: -1.2px;
+
+    color: #4f46d8;
+
+    transition: opacity 0.2s ease;
+}
+
+.home-logo:hover {
+    opacity: 0.7;
+}
+
+
+/* ========================================
+   NAVEGAÇÃO
+======================================== */
+
+.home-nav {
+    display: flex;
+    align-items: center;
+
+    gap: 38px;
+}
+
+
+.home-nav a {
+    font-size: 13px;
+    font-weight: 400;
+
+    color: #707da8;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.home-nav a:hover {
+    color: #4f46d8;
+
+    transform: translateY(-1px);
+}
+
+
+/* ========================================
+   LOGO CENTRAL
+======================================== */
+
+.home-center {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 2;
+}
+
+
+.home-center h1 {
+    font-size: clamp(100px, 13vw, 190px);
+
+    font-weight: 600;
+
+    letter-spacing: -10px;
+
+    color: #5148df;
+
+    line-height: 0.9;
+
+    user-select: none;
+
+    text-shadow:
+        0 8px 25px rgba(78, 69, 220, 0.08);
+}
+
+
+/* ========================================
+   TEXTO INFERIOR
+======================================== */
+
+.home-footer {
+    position: absolute;
+
+    left: 62px;
+    bottom: 58px;
+
+    z-index: 5;
+}
+
+
+.home-footer span {
+    display: block;
+
+    width: 31px;
+    height: 1px;
+
+    margin-bottom: 17px;
+
+    background: rgba(255, 255, 255, 0.9);
+}
+
+
+.home-footer p {
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 13px;
+
+    font-weight: 300;
+
+    line-height: 1.55;
+
+    letter-spacing: -0.2px;
+}
+
+
+/* ========================================
+   CÍRCULO DECORATIVO
+======================================== */
+
+.home-circle {
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    right: -205px;
+    bottom: -205px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    z-index: 3;
+}
+
+
+/* ========================================
+   EFEITO SUAVE DE LUZ
+======================================== */
+
+.home-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -300px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.4);
+
+    filter: blur(80px);
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   RESPONSIVO
+======================================== */
+
+@media (max-width: 900px) {
+
+    .home-page {
+        padding: 25px;
+    }
+
+    .home-card {
+        height: 700px;
+    }
+
+    .home-header {
+        padding: 30px;
+    }
+
+    .home-footer {
+        left: 30px;
+        bottom: 35px;
+    }
+
+    .home-center h1 {
+        font-size: 100px;
+        letter-spacing: -6px;
+    }
+
+    .home-nav {
+        gap: 20px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .home-page {
+        padding: 15px;
+    }
+
+    .home-card {
+        height: calc(100vh - 30px);
+
+        min-height: 550px;
+
+        border-radius: 18px;
+    }
+
+    .home-header {
+        padding: 25px;
+    }
+
+    .home-logo {
+        font-size: 17px;
+    }
+
+    .home-nav {
+        gap: 14px;
+    }
+
+    .home-nav a {
+        font-size: 11px;
+    }
+
+    .home-center h1 {
+        font-size: 75px;
+
+        letter-spacing: -5px;
+    }
+
+    .home-footer {
+        left: 25px;
+        bottom: 28px;
+    }
+
+    .home-circle {
+        width: 300px;
+        height: 300px;
+
+        right: -150px;
+        bottom: -150px;
+    }
 }
