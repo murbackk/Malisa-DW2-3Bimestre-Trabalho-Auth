@@ -372,3 +372,874 @@ a {
         bottom: -150px;
     }
 }
+/* ========================================
+   TELAS DE AUTENTICAÇÃO
+   LOGIN + CADASTRO
+======================================== */
+
+.auth-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 25px;
+
+    background:
+        radial-gradient(
+            circle at 15% 85%,
+            rgba(132, 104, 255, 0.14),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(153, 176, 255, 0.18),
+            transparent 35%
+        ),
+        #f7f7ff;
+}
+
+
+/* ========================================
+   CARD
+======================================== */
+
+.auth-card {
+    width: 100%;
+    max-width: 960px;
+
+    min-height: 590px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+
+    padding: 70px 100px;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(177, 187, 255, 0.24),
+            transparent 40%
+        ),
+        #ffffff;
+
+    border: 1px solid rgba(104, 95, 210, 0.08);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 25px 70px rgba(79, 70, 216, 0.10),
+        0 5px 20px rgba(40, 45, 90, 0.04);
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.auth-logo {
+    position: absolute;
+
+    top: 35px;
+    left: 42px;
+
+    font-size: 21px;
+    font-weight: 600;
+
+    letter-spacing: -1.4px;
+
+    color: #5148df;
+
+    transition: opacity 0.2s ease;
+}
+
+.auth-logo:hover {
+    opacity: 0.65;
+}
+
+
+/* ========================================
+   TÍTULO
+======================================== */
+
+.auth-card h1 {
+    margin-bottom: 12px;
+
+    color: #202544;
+
+    font-size: 42px;
+    font-weight: 500;
+
+    letter-spacing: -2.5px;
+
+    line-height: 1.1;
+}
+
+
+/* ========================================
+   DESCRIÇÃO
+======================================== */
+
+.auth-description {
+    max-width: 480px;
+
+    margin-bottom: 36px;
+
+    color: #7a819c;
+
+    font-size: 14px;
+    font-weight: 300;
+
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   FORMULÁRIO
+======================================== */
+
+.auth-form {
+    width: 100%;
+    max-width: 500px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ========================================
+   LABEL
+======================================== */
+
+.auth-form label {
+    margin-bottom: 8px;
+
+    color: #4c526e;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: -0.1px;
+}
+
+
+/* ========================================
+   INPUT
+======================================== */
+
+.auth-form input {
+    width: 100%;
+
+    height: 52px;
+
+    margin-bottom: 20px;
+
+    padding: 0 17px;
+
+    border: 1px solid #e2e4ee;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background: #fbfbfe;
+
+    color: #252a45;
+
+    font-family: "Sora", sans-serif;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.auth-form input::placeholder {
+    color: #b0b4c5;
+}
+
+
+.auth-form input:focus {
+    border-color: #8279e9;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px rgba(81, 72, 223, 0.08);
+}
+
+
+/* ========================================
+   BOTÃO
+======================================== */
+
+.auth-button {
+    width: 100%;
+    max-width: 500px;
+
+    height: 52px;
+
+    margin-top: 8px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: #5148df;
+
+    color: white;
+
+    font-family: "Sora", sans-serif;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(81, 72, 223, 0.18);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.auth-button:hover {
+    background: #463dd1;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 10px 24px rgba(81, 72, 223, 0.23);
+}
+
+
+.auth-button:active {
+    transform: translateY(0);
+}
+
+
+.auth-button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* ========================================
+   MENSAGENS DE ERRO / SUCESSO
+======================================== */
+
+.message {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    margin-bottom: 15px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+.message.error {
+    background: #fff2f3;
+
+    border: 1px solid #ffd7db;
+
+    color: #c63b48;
+}
+
+
+.message.success {
+    background: #f0faf5;
+
+    border: 1px solid #cceedd;
+
+    color: #31805a;
+}
+
+
+/* ========================================
+   RODAPÉ DO FORMULÁRIO
+======================================== */
+
+.auth-footer {
+    margin-top: 28px;
+
+    color: #9297aa;
+
+    font-size: 12px;
+    font-weight: 300;
+}
+
+
+.auth-footer a {
+    color: #5148df;
+
+    font-weight: 500;
+
+    transition: opacity 0.2s ease;
+}
+
+
+.auth-footer a:hover {
+    opacity: 0.65;
+}
+
+
+/* ========================================
+   ÁREA RESTRITA
+======================================== */
+
+.restricted-label {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: #5148df;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+
+/* ========================================
+   INFORMAÇÕES DO USUÁRIO
+======================================== */
+
+.user-info {
+    width: 100%;
+    max-width: 500px;
+
+    margin: 8px 0 22px;
+
+    padding: 18px 20px;
+
+    border: 1px solid #e8e9f2;
+
+    border-radius: 12px;
+
+    background: #fafaff;
+}
+
+
+.user-info span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #999eb0;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+.user-info strong {
+    color: #343952;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+/* ========================================
+   BOTÃO LOGOUT
+======================================== */
+
+.logout-button {
+    width: 100%;
+    max-width: 500px;
+
+    height: 50px;
+
+    border: 1px solid #e3e1f7;
+
+    border-radius: 10px;
+
+    background: #f7f6ff;
+
+    color: #5148df;
+
+    font-family: "Sora", sans-serif;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.logout-button:hover {
+    background: #eeecff;
+
+    border-color: #d8d4fa;
+}
+
+
+/* ========================================
+   LINK VOLTAR
+======================================== */
+
+.back-link {
+    margin-top: 22px;
+
+    color: #9499ac;
+
+    font-size: 11px;
+
+    transition: color 0.2s ease;
+}
+
+
+.back-link:hover {
+    color: #5148df;
+}
+
+
+/* ========================================
+   LOADING
+======================================== */
+
+.loading-card {
+    min-height: 300px;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.loading-card p {
+    color: #8c91a5;
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   RESPONSIVO — AUTENTICAÇÃO
+======================================== */
+
+@media (max-width: 700px) {
+
+    .auth-page {
+        padding: 20px;
+    }
+
+    .auth-card {
+        min-height: auto;
+
+        padding: 85px 35px 45px;
+
+        border-radius: 22px;
+    }
+
+    .auth-logo {
+        top: 28px;
+        left: 35px;
+    }
+
+    .auth-card h1 {
+        font-size: 34px;
+    }
+
+    .auth-description {
+        font-size: 13px;
+
+        margin-bottom: 30px;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .auth-page {
+        padding: 12px;
+    }
+
+    .auth-card {
+        padding: 80px 25px 35px;
+
+        border-radius: 18px;
+    }
+
+    .auth-logo {
+        left: 25px;
+    }
+
+    .auth-card h1 {
+        font-size: 30px;
+    }
+
+    .auth-form input,
+    .auth-button {
+        height: 50px;
+    }
+}
+/* ========================================
+   PÁGINA RESTRITA
+======================================== */
+
+.restricted-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at 15% 85%,
+            rgba(132, 104, 255, 0.14),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(153, 176, 255, 0.18),
+            transparent 35%
+        ),
+        #f7f7ff;
+}
+
+
+/* ========================================
+   CARD
+======================================== */
+
+.restricted-card {
+    width: 100%;
+    max-width: 650px;
+
+    min-height: 570px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    padding: 65px 60px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(177, 187, 255, 0.18),
+            transparent 45%
+        ),
+        #ffffff;
+
+    border: 1px solid rgba(104, 95, 210, 0.08);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 25px 70px rgba(79, 70, 216, 0.10),
+        0 5px 20px rgba(40, 45, 90, 0.04);
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.restricted-logo {
+    position: absolute;
+
+    top: 35px;
+    left: 42px;
+
+    color: #5148df;
+
+    font-size: 21px;
+    font-weight: 600;
+
+    letter-spacing: -1.4px;
+}
+
+
+/* ========================================
+   CADEADO
+======================================== */
+
+.lock {
+    width: 64px;
+    height: 55px;
+
+    position: relative;
+
+    margin-bottom: 32px;
+}
+
+
+/* Corpo do cadeado */
+
+.lock-body {
+    position: absolute;
+
+    left: 8px;
+    bottom: 0;
+
+    width: 48px;
+    height: 38px;
+
+    border-radius: 9px;
+
+    background: #5148df;
+
+    box-shadow:
+        0 10px 25px rgba(81, 72, 223, 0.20);
+}
+
+
+/* Arco do cadeado */
+
+.lock-shackle {
+    position: absolute;
+
+    left: 19px;
+    top: 0;
+
+    width: 26px;
+    height: 30px;
+
+    border: 6px solid #5148df;
+    border-bottom: none;
+
+    border-radius: 16px 16px 0 0;
+}
+
+
+/* Fechadura */
+
+.lock-keyhole {
+    position: absolute;
+
+    left: 28px;
+    top: 18px;
+
+    width: 8px;
+    height: 13px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+}
+
+.lock-keyhole::after {
+    content: "";
+
+    position: absolute;
+
+    left: 2px;
+    top: 7px;
+
+    width: 4px;
+    height: 7px;
+
+    border-radius: 2px;
+
+    background: #ffffff;
+}
+
+
+/* ========================================
+   TÍTULO
+======================================== */
+
+.restricted-card h1 {
+    margin-bottom: 14px;
+
+    color: #202544;
+
+    font-size: 38px;
+    font-weight: 500;
+
+    letter-spacing: -2.2px;
+}
+
+
+/* ========================================
+   DESCRIÇÃO
+======================================== */
+
+.restricted-description {
+    max-width: 430px;
+
+    margin-bottom: 30px;
+
+    color: #858ba0;
+
+    font-size: 13px;
+    font-weight: 300;
+
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   INFORMAÇÃO DO USUÁRIO
+======================================== */
+
+.restricted-user {
+    width: 100%;
+    max-width: 390px;
+
+    padding: 17px 22px;
+
+    margin-bottom: 28px;
+
+    border: 1px solid #e8e8f1;
+
+    border-radius: 12px;
+
+    background: #fafaff;
+}
+
+
+.restricted-user-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #a0a4b5;
+
+    font-size: 9px;
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+.restricted-user-email {
+    display: block;
+
+    color: #464b67;
+
+    font-size: 13px;
+    font-weight: 400;
+}
+
+
+/* ========================================
+   BOTÃO SAIR
+======================================== */
+
+.restricted-logout {
+    width: 180px;
+    height: 46px;
+
+    border: 1px solid #dedcf6;
+
+    border-radius: 10px;
+
+    background: #f7f6ff;
+
+    color: #5148df;
+
+    font-family: "Sora", sans-serif;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.restricted-logout:hover {
+    background: #eeecff;
+
+    border-color: #d2cff5;
+
+    transform: translateY(-1px);
+}
+
+
+/* ========================================
+   RESPONSIVO
+======================================== */
+
+@media (max-width: 600px) {
+
+    .restricted-page {
+        padding: 18px;
+    }
+
+    .restricted-card {
+        min-height: 530px;
+
+        padding: 75px 30px 45px;
+
+        border-radius: 22px;
+    }
+
+    .restricted-logo {
+        top: 28px;
+        left: 30px;
+    }
+
+    .restricted-card h1 {
+        font-size: 32px;
+    }
+
+    .restricted-description {
+        font-size: 12px;
+    }
+
+    .restricted-user {
+        max-width: 100%;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .restricted-card {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .restricted-card h1 {
+        font-size: 28px;
+    }
+
+    .lock {
+        transform: scale(0.9);
+    }
+}
